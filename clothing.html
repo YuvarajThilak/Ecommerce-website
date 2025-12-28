@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clothing Store</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f5f5f5;
+      }
+
+      /* Header */
+      header {
+        background-color: #111;
+        color: #fff;
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      nav a {
+        color: white;
+        margin-left: 20px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        color: #f39c12;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: url("https://images.unsplash.com/photo-1521335629791-ce4aec67dd47")
+          center/cover no-repeat;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+      }
+
+      .hero h2 {
+        font-size: 40px;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      /* Categories */
+      .categories {
+        padding: 40px;
+      }
+
+      .categories h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .category-box {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .category {
+        background: white;
+        padding: 30px;
+        width: 200px;
+        text-align: center;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .category:hover {
+        background-color: #f39c12;
+        color: white;
+      }
+
+      /* Products */
+      .products {
+        padding: 40px;
+      }
+
+      .products h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .product {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .product img {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      .product h3 {
+        margin: 10px 0;
+      }
+
+      .product button {
+        padding: 10px 20px;
+        border: none;
+        background: #111;
+        color: white;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .product button:hover {
+        background: #f39c12;
+      }
+
+      /* Footer */
+      footer {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 40px;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+        }
+
+        nav {
+          margin-top: 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Fashion Hub</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h2>Latest Fashion Collection</h2>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+      <h2>Shop by Category</h2>
+      <div class="category-box">
+        <div class="category">Men</div>
+        <div class="category">Women</div>
+        <div class="category">Kids</div>
+        <div class="category">Accessories</div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products">
+      <h2>Popular Products</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img src="https://via.placeholder.com/300x300" alt="Product" />
+          <h3>T-Shirt</h3>
+          <p>₹499</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="https://via.placeholder.com/300x300" alt="Product" />
+          <h3>Jacket</h3>
+          <p>₹1,999</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="https://via.placeholder.com/300x300" alt="Product" />
+          <h3>Dress</h3>
+          <p>₹1,299</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="https://via.placeholder.com/300x300" alt="Product" />
+          <h3>Jeans</h3>
+          <p>₹899</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </section>
+    <div id="4"></div>
+    <script>
+      load("footer.html");
+      function load(url) {
+        req = new XMLHttpRequest();
+        req.open("GET", url, false);
+        req.send(null);
+        document.getElementById(4).innerHTML = req.responseText;
+      }
+    </script>
+  </body>
+</html>

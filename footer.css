@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FOOTER MAIN */
+footer {
+  width: 100%;
+  background-color: #1c1b1e;
+  color: #fff;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+footer section {
+  padding: 40px 80px 20px;
+}
+
+/* CONTAINER */
+#containerFooter {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* FOOTER COLUMNS */
+#webFooter {
+  min-width: 200px;
+}
+
+#webFooter h3 {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+#webFooter p {
+  font-size: 14px;
+  color: #cfcfcf;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#webFooter p:hover {
+  color: #1abc9c;
+}
+
+/* CREDIT SECTION */
+#credit {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #333;
+  font-size: 13px;
+  color: #aaa;
+}
+
+#credit a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#credit a:hover {
+  color: #1abc9c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  footer section {
+    padding: 30px 25px;
+  }
+
+  #containerFooter {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #webFooter {
+    margin-bottom: 25px;
+  }
+}
